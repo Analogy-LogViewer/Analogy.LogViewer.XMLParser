@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analogy.LogViewer.XMLFileProvider", "Analogy.LogViewer.XMLFileProvider\Analogy.LogViewer.XMLFileProvider.csproj", "{51F61B2C-DAEF-4867-AED5-DDBC6EBF5916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analogy.LogViewer.XMLFileProvider.UnitTests", "Analogy.LogViewer.XMLFileProvider.UnitTests\Analogy.LogViewer.XMLFileProvider.UnitTests.csproj", "{DF2AFA86-5F40-4DC6-AF2F-8B9F5D9582BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F61B2C-DAEF-4867-AED5-DDBC6EBF5916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F61B2C-DAEF-4867-AED5-DDBC6EBF5916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F61B2C-DAEF-4867-AED5-DDBC6EBF5916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F61B2C-DAEF-4867-AED5-DDBC6EBF5916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF2AFA86-5F40-4DC6-AF2F-8B9F5D9582BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF2AFA86-5F40-4DC6-AF2F-8B9F5D9582BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF2AFA86-5F40-4DC6-AF2F-8B9F5D9582BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2AFA86-5F40-4DC6-AF2F-8B9F5D9582BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AF8B359-8A51-4C0B-8378-EEC295A9A000}
+	EndGlobalSection
+EndGlobal
