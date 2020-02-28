@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Linq;
+using Analogy.Interfaces;
 
 namespace Analogy.LogViewer.XMLLogParser
 {
     public class XMLParser
     {
-
-        public void ParserFile(string filename)
+        private ILogParserSettings _logFileSettings;
+        public XMLParser(ILogParserSettings logFileSettings)
         {
-            string xmlData = File.ReadAllText(filename);
+            _logFileSettings = logFileSettings;
+        }
+
+        public Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token,
+            ILogMessageCreatedHandler messagesHandler)
+        {
+            string xmlData = File.ReadAllText(fileName);
             Func<string, List<object>> parseData = (data) => ParserInternal(data);
             try
             {
-                parseData(xmlData);
+                var data=parseData(xmlData);
+                return Task.FromResult(new List<AnalogyLogMessage>().AsEnumerable());
 
             }
             catch (Exception e)
@@ -22,8 +33,9 @@ namespace Analogy.LogViewer.XMLLogParser
                 string data = TryFix(xmlData);
                 parseData(data);
             }
-
+            return Task.FromResult(new List<AnalogyLogMessage>().AsEnumerable());
         }
+
 
         private string TryFix(string data)
         {

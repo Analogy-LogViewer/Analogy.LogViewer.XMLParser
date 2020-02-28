@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Analogy.LogViewer.XMLFileProvider
+namespace Analogy.LogViewer.XMLLogParser
 {
-    public partial class UserControl1: UserControl
+    public partial class XMLUserControlSettings: UserControl
     {
-        public UserControl1()
+        public XMLUserControlSettings()
         {
             InitializeComponent();
         }

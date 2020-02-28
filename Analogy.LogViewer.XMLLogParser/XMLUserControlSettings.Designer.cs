@@ -1,6 +1,6 @@
-﻿namespace Analogy.LogViewer.XMLFileProvider
+﻿namespace Analogy.LogViewer.XMLLogParser
 {
-    partial class UserControl1
+    partial class XMLUserControlSettings
     {
         /// <summary>
         /// Required designer variable.
