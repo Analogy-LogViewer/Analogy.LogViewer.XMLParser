@@ -1,12 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>Analogy.LogViewer.XMLFileProvider</RootNamespace>
-    <AssemblyName>Analogy.LogViewer.XMLFileProvider</AssemblyName>
+    <RootNamespace>Analogy.LogViewer.XMLLogParser</RootNamespace>
+    <AssemblyName>Analogy.LogViewer.XMLLogParser</AssemblyName>
     <TargetFramework>net472</TargetFramework>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
-    <Product>Analogy.LogViewer.XMLFileProvider</Product>
-    <Copyright>Copyright ©  2019</Copyright>
+    <Product>Analogy.LogViewer.XMLLogParser</Product>
+    <Copyright>Copyright ©  2020</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
+    <PackageId>Analogy.LogViewer.XMLLogParser</PackageId>
+    <Authors>Lior Banai</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLLogParser</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLLogParser</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
@@ -15,6 +25,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Analogy.DataProviders.Extensions" Version="1.0.3" />
+    <PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.1.7.3" />
+    <PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
