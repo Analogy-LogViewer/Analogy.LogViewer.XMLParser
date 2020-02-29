@@ -13,7 +13,7 @@ using Analogy.LogViewer.XMLLogParser.Properties;
 
 namespace Analogy.LogViewer.XMLLogParser.IAnalogy
 {
-    public class AnalogyXMLFactory
+    public class AnalogyXMLFactory : IAnalogyFactory
     {
         public Guid FactoryID { get; } = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
         public string Title { get; } = "Analogy XML Text Parser";
