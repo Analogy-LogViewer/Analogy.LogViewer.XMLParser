@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
 using Newtonsoft.Json;
 
-namespace Analogy.LogViewer.XMLLogParser.Managers
+namespace Analogy.LogViewer.XMLParser.Managers
 {
     public class UserSettingsManager
     {

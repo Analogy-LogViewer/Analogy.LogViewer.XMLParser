@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Analogy.Interfaces;
-using Analogy.LogViewer.XMLLogParser.Managers;
+using Analogy.LogViewer.XMLParser.Managers;
 
-namespace Analogy.LogViewer.XMLLogParser.IAnalogy
+namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
     public class XMLDataProvider : IAnalogyOfflineDataProvider
     {

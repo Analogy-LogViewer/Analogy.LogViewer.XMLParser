@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Analogy.LogViewer.XMLLogParser
+namespace Analogy.LogViewer.XMLParser
 {
     public partial class XMLUserControlSettings: UserControl
     {

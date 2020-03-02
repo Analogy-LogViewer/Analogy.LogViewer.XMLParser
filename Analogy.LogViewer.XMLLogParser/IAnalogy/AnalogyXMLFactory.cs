@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.DataProviders.Extensions;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
-using Analogy.LogViewer.XMLLogParser.Managers;
-using Analogy.LogViewer.XMLLogParser.Properties;
+using Analogy.LogViewer.XMLParser.Managers;
+using Analogy.LogViewer.XMLParser.Properties;
 
-namespace Analogy.LogViewer.XMLLogParser.IAnalogy
+namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
     public class AnalogyXMLFactory : IAnalogyFactory
     {
@@ -19,7 +17,7 @@ namespace Analogy.LogViewer.XMLLogParser.IAnalogy
         public string Title { get; } = "Analogy XML Text Parser";
         public IAnalogyDataProvidersFactory DataProviders { get; }
         public IAnalogyCustomActionsFactory Actions { get; }
-        public IEnumerable<IAnalogyChangeLog> ChangeLog => XMLLogParser.ChangeLog.GetChangeLog();
+        public IEnumerable<IAnalogyChangeLog> ChangeLog => LogViewer.XMLParser.ChangeLog.GetChangeLog();
         public IEnumerable<string> Contributors { get; } = new List<string> {"Lior Banai"};
         public string About { get; } = "Analogy XML Text Parser";
 

@@ -1,4 +1,4 @@
-﻿namespace Analogy.LogViewer.XMLLogParser
+﻿namespace Analogy.LogViewer.XMLParser
 {
     partial class XMLUserControlSettings
     {

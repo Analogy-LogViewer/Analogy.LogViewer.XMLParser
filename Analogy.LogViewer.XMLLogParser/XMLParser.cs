@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Analogy.Interfaces;
 
-namespace Analogy.LogViewer.XMLLogParser
+namespace Analogy.LogViewer.XMLParser
 {
     public class XMLParser
     {

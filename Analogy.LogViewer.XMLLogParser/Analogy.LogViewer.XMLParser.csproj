@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>Analogy.LogViewer.XMLLogParser</RootNamespace>
-    <AssemblyName>Analogy.LogViewer.XMLLogParser</AssemblyName>
+    <RootNamespace>Analogy.LogViewer.XMLParser</RootNamespace>
+    <AssemblyName>Analogy.LogViewer.XMLParser</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
-    <Product>Analogy.LogViewer.XMLLogParser</Product>
+    <Product>Analogy.LogViewer.XMLParser</Product>
     <Copyright>Copyright ©  2020</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <PackageId>Analogy.LogViewer.XMLLogParser</PackageId>
+    <PackageId>Analogy.LogViewer.XMLParser</PackageId>
     <Authors>Lior Banai</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLLogParser</PackageProjectUrl>

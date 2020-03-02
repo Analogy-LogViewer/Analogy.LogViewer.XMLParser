@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Analogy.Interfaces;
 
-namespace Analogy.LogViewer.XMLLogParser
+namespace Analogy.LogViewer.XMLParser
 {
     public static class ChangeLog
     {
