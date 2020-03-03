@@ -19,7 +19,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public string FileOpenDialogFilters { get; } = "XML log files|*.xml";
         public string FileSaveDialogFilters { get; } = string.Empty;
         public IEnumerable<string> SupportFormats { get; } = new[] { "*.xml" };
-
+        public bool DisableFilePoolingOption { get; } = false;
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
