@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Analogy.DataProviders.Extensions;
+﻿using Analogy.DataProviders.Extensions;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.LogViewer.XMLParser.Managers;
 using Analogy.LogViewer.XMLParser.Properties;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
     public class AnalogyXMLFactory : IAnalogyFactory
     {
-        public Guid FactoryID { get; } = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
+        internal static Guid xmlFactory = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
+        public Guid FactoryID { get; } = xmlFactory;
         public string Title { get; } = "Analogy XML Text Parser";
         public IAnalogyDataProvidersFactory DataProviders { get; }
         public IAnalogyCustomActionsFactory Actions { get; }
         public IEnumerable<IAnalogyChangeLog> ChangeLog => LogViewer.XMLParser.ChangeLog.GetChangeLog();
-        public IEnumerable<string> Contributors { get; } = new List<string> {"Lior Banai"};
+        public IEnumerable<string> Contributors { get; } = new List<string> { "Lior Banai" };
         public string About { get; } = "Analogy XML Text Parser";
 
         public AnalogyXMLFactory()
@@ -42,7 +43,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
             {
                 new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings)
             };
-           Items = builtInItems;
+            Items = builtInItems;
         }
     }
 
@@ -61,10 +62,11 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     {
 
         public Guid ID { get; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
-
+        public Guid FactoryId { get; set; } = AnalogyXMLFactory.xmlFactory;
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new XMLUserControlSettings();
-        public Image Icon { get; } = Resources.xml32x32;
+        public Image SmallImage { get; }
+        public Image LargeImage { get; } = Resources.xml32x32;
 
         public Task SaveSettingsAsync()
         {
