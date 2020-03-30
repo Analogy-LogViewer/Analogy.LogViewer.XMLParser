@@ -14,48 +14,28 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     public class AnalogyXMLFactory : IAnalogyFactory
     {
         internal static Guid xmlFactory = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
-        public Guid FactoryID { get; } = xmlFactory;
+        public Guid FactoryId { get; } = xmlFactory;
         public string Title { get; } = "Analogy XML Text Parser";
-        public IAnalogyDataProvidersFactory DataProviders { get; }
-        public IAnalogyCustomActionsFactory Actions { get; }
         public IEnumerable<IAnalogyChangeLog> ChangeLog => LogViewer.XMLParser.ChangeLog.GetChangeLog();
         public IEnumerable<string> Contributors { get; } = new List<string> { "Lior Banai" };
         public string About { get; } = "Analogy XML Text Parser";
-
-        public AnalogyXMLFactory()
-        {
-            DataProviders = new AnalogyXMLDataProviderFactory();
-            Actions = new AnalogyXMLCustomActionFactory();
-
-        }
-
-
     }
 
     public class AnalogyXMLDataProviderFactory : IAnalogyDataProvidersFactory
     {
+        public Guid FactoryId { get; } = AnalogyXMLFactory.xmlFactory;
         public string Title { get; } = "Analogy XML Data Provider";
-        public IEnumerable<IAnalogyDataProvider> Items { get; }
-
-        public AnalogyXMLDataProviderFactory()
+        public IEnumerable<IAnalogyDataProvider> DataProviders { get; } = new List<IAnalogyDataProvider>()
         {
-            var builtInItems = new List<IAnalogyDataProvider>()
-            {
-                new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings)
-            };
-            Items = builtInItems;
-        }
+            new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings)
+        };
     }
 
     public class AnalogyXMLCustomActionFactory : IAnalogyCustomActionsFactory
     {
+        public Guid FactoryId { get; } = AnalogyXMLFactory.xmlFactory;
         public string Title { get; } = "Analogy XML Text tools";
-        public IEnumerable<IAnalogyCustomAction> Items { get; }
-
-        public AnalogyXMLCustomActionFactory()
-        {
-            Items = new List<IAnalogyCustomAction>(0);
-        }
+        public IEnumerable<IAnalogyCustomAction> Actions { get; } = new List<IAnalogyCustomAction>(0);
     }
 
     public class AnalogyxmlSettings : IAnalogyDataProviderSettings
