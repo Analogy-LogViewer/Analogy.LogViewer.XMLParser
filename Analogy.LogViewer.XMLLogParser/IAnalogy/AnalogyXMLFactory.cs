@@ -41,7 +41,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     public class AnalogyxmlSettings : IAnalogyDataProviderSettings
     {
 
-        public Guid ID { get; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
+        public Guid ID { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
         public Guid FactoryId { get; set; } = AnalogyXMLFactory.xmlFactory;
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new XMLUserControlSettings();
