@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 using Analogy.Interfaces;
 
@@ -66,18 +67,18 @@ namespace Analogy.LogViewer.XMLParser
             List<AnalogyLogMessage> messages = new List<AnalogyLogMessage>();
             try
             {
-                string json = File.ReadAllText(fileName); 
+                string json = File.ReadAllText(fileName);
                 string xmlData = File.ReadAllText(fileName);
-                Func<string, List<object>> parseData = (data) => ParserInternal(data);
+                List<List<(string, string)>> ParseData(string data) => ParserInternal(data);
                 try
                 {
-                    var data = parseData(xmlData);
+                    var data = ParseData(xmlData);
 
                 }
                 catch (Exception e)
                 {
                     string data = TryFix(xmlData);
-                    parseData(data);
+                    ParseData(data);
                 }
 
                 messagesHandler.AppendMessages(messages, fileName);
@@ -104,10 +105,20 @@ namespace Analogy.LogViewer.XMLParser
             return corrected;
         }
 
-        private List<object> ParserInternal(string data)
+        private List<List<(string, string)>> ParserInternal(string data)
         {
-            XDocument XMLDoc = XDocument.Parse(data);
-            return new List<object>();
+            var items = new List<List<(string, string)>>();
+            var doc = new XmlDocument();
+            doc.LoadXml(data);
+            doc.IterateThroughAllNodes(
+                node =>
+                {
+                    var inner = new List<(string, string)>();
+                    var innerXML = node.ChildNodes;
+                    
+
+                });
+            return items;
         }
     }
 }
