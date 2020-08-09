@@ -36,10 +36,9 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	<ItemGroup>
+	<ItemGroup  Condition=" '$(TargetFramework)' != 'netcoreapp3.1' ">
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Net.Http" />
 		<Reference Include="System.Windows.Forms" />
 	</ItemGroup>
 	<ItemGroup>
@@ -56,9 +55,9 @@
 		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="..\Assets\Analogy_XMLParser.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	  </None>
+		<None Include="..\Assets\Analogy_XMLParser.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
 	</ItemGroup>
 </Project>
