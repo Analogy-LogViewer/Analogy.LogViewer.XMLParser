@@ -32,4 +32,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="defaultFile_2019_05_19_13_42_33.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

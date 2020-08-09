@@ -9,8 +9,7 @@ namespace Analogy.LogViewer.XMLFileProvider.UnitTests
         [TestMethod]
         public void TestMethod1()
         {
-            //string filename =
-            //    @"E:\files\others\Google Drive\Analogy\log format icap\defaultFile_2019_05_19_13_42_33.log";
+            string filename = "defaultFile_2019_05_19_13_42_33.xml";
 
             //XMLParser p = new XMLParser();
             //p.ParserFile(filename);
