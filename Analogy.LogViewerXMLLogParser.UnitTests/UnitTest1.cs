@@ -17,6 +17,7 @@ namespace Analogy.LogViewer.XMLFileProvider.UnitTests
             string fileName = "defaultFile_2019_05_19_13_42_33.xml";
             ILogParserSettings lp = new LogParserSettings();
             lp.IsConfigured = true;
+            lp.AddMap(AnalogyLogMessagePropertyName.Id,"ID");
             lp.SupportedFilesExtensions = new List<string>() { "*.xml" };
             var fp = new XMLParser.XMLParser(lp);
             CancellationTokenSource ts = new CancellationTokenSource();

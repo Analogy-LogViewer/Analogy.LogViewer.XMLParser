@@ -67,13 +67,26 @@ namespace Analogy.LogViewer.XMLParser
             List<AnalogyLogMessage> messages = new List<AnalogyLogMessage>();
             try
             {
-                string json = File.ReadAllText(fileName);
                 string xmlData = File.ReadAllText(fileName);
                 List<List<(string, string)>> ParseData(string data) => ParserInternal(data);
                 try
                 {
-                    var data = ParseData(xmlData);
+                    var rows = ParseData(xmlData);
+                    foreach (var items in rows)
+                    {
+                        List<(string, string)> tuples = new List<(string, string)>(items.Count);
+                        foreach (var (key,value) in items)
+                        {
+                            var keyProperty = _logFileSettings.GetAnalogyPropertyName(key);
+                            tuples.Add(keyProperty.HasValue
+                                ? (keyProperty.Value.ToString(), value)
+                                : (key, value));
 
+                        }
+
+                        var m = AnalogyLogMessage.Parse(tuples);
+                        messages.Add(m);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -114,8 +127,17 @@ namespace Analogy.LogViewer.XMLParser
                 node =>
                 {
                     var inner = new List<(string, string)>();
-                    var innerXML = node.ChildNodes;
-                    
+                    var xr = new XmlNodeReader(node);
+                    while (xr.Read())
+                    {
+                        while (xr.Read())
+                        {
+                            while (xr.IsStartElement())
+                                inner.Add((xr.Name, xr.ReadElementContentAsString()));
+                        }
+                    }
+
+                    items.Add(inner);
 
                 });
             return items;

@@ -17,7 +17,9 @@ namespace Analogy.LogViewer.XMLParser
             {
                 foreach (XmlNode node in doc.ChildNodes)
                 {
-                    doIterateNode(node, elementVisitor);
+                    foreach (XmlNode inner in node.ChildNodes)
+                        elementVisitor(inner); 
+                    //doIterateNode(inner, elementVisitor);
                 }
             }
         }
