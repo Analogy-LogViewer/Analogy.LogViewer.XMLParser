@@ -12,9 +12,12 @@
     <img src="https://img.shields.io/github/license/Analogy-LogViewer/Analogy.LogViewer.XMLParser"  alt="License" />
 </a>
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Analogy-LogViewer/Analogy.LogViewer.XMLParser)](https://dependabot.com)
+[![Nuget](https://img.shields.io/nuget/v/Analogy.LogViewer.XMLParser)](https://www.nuget.org/packages/Analogy.LogViewer.XMLParser/)
 <a href="https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser/releases">
     <img src="https://img.shields.io/github/v/release/Analogy-LogViewer/Analogy.LogViewer.XMLParser"  alt="Latest Release" />
 </a>
+
+
 <a href="https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser/compare/V0.1.0...master">
     <img src="https://img.shields.io/github/commits-since/Analogy-LogViewer/Analogy.LogViewer.XMLParser/latest"  alt="Commits Since Latest Release"/>
 </a>
