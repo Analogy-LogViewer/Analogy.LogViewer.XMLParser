@@ -10,7 +10,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLParser</Product>
-		<Copyright>Lior Banai ©  2020</Copyright>
+		<Copyright>Lior Banai © 2020</Copyright>
 		<PackageId>Analogy.LogViewer.XMLParser</PackageId>
 		<Authors>Lior Banai</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,7 +18,7 @@
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLLogParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>0.2.0</Version>
+		<Version>0.2.2</Version>
 		<Company>Analogy.LogViewer</Company>
 		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
