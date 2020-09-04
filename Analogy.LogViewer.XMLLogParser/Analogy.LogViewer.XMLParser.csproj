@@ -10,7 +10,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLParser</Product>
-		<Copyright>Lior Banai ©  2020</Copyright>
+		<Copyright>Lior Banai © 2020</Copyright>
 		<PackageId>Analogy.LogViewer.XMLParser</PackageId>
 		<Authors>Lior Banai</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,14 +18,14 @@
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLLogParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>0.1.0</Version>
+		<Version>0.2.2</Version>
 		<Company>Analogy.LogViewer</Company>
 		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.3.2.6" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.4.3" />
 		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,7 +35,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	<ItemGroup  Condition=" '$(TargetFramework)' != 'netcoreapp3.1' ">
+	<ItemGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.1' ">
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Windows.Forms" />

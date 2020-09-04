@@ -14,7 +14,9 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     {
         public string OptionalTitle { get; } = "Analogy XML Text Parser";
 
-        public Guid ID { get; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
+        public Guid Id { get; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
+        public Image LargeImage => null;
+        public Image SmallImage => null;
 
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "XML log files|*.xml";
