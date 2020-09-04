@@ -12,11 +12,11 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
     public class XMLDataProvider : IAnalogyOfflineDataProvider
     {
-        public string OptionalTitle { get; } = "Analogy XML Text Parser";
+        public string OptionalTitle { get; set; } = "Analogy XML Text Parser";
 
-        public Guid Id { get; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
-        public Image LargeImage => null;
-        public Image SmallImage => null;
+        public Guid Id { get; set; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
+        public Image LargeImage { get; set; } = null;
+        public Image SmallImage { get; set; } = null;
 
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "XML log files|*.xml";
