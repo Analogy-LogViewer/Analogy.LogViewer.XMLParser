@@ -19,6 +19,8 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = LogViewer.XMLParser.ChangeLog.GetChangeLog();
         public IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
         public string About { get; set; } = "XML Text Parser";
+        public Image LargeImage { get; set; } = Resources.xml32x32;
+        public Image SmallImage { get; set; } = Resources.xml16x16;
     }
 
     public class AnalogyXMLDataProviderFactory : IAnalogyDataProvidersFactory
