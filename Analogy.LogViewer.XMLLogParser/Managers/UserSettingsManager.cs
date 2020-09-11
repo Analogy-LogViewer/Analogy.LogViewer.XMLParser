@@ -27,7 +27,7 @@ namespace Analogy.LogViewer.XMLParser.Managers
                 }
                 catch (Exception ex)
                 {
-                    LogManager.Instance.LogException(ex, "XML Provider", "Error loading user setting file");
+                    LogManager.Instance.LogException("Error loading user setting file",ex, "XML Provider");
                     LogParserSettings = new LogParserSettings();
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.xml" };
                 }
@@ -49,7 +49,7 @@ namespace Analogy.LogViewer.XMLParser.Managers
             }
             catch (Exception e)
             {
-                LogManager.Instance.LogException(e, "XML parser", "Error saving XML parser settings");
+                LogManager.Instance.LogException("Error saving XML parser settings",e, "XML parser");
             }
 
 
