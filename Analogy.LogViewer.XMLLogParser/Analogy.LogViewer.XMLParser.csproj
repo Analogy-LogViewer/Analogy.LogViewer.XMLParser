@@ -24,7 +24,7 @@
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.CommonUtilities" Version="1.3.0" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="1.3.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 		<PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
 		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.2" />
