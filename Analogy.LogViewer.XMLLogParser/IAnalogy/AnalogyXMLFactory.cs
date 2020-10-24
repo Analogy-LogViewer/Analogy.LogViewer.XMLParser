@@ -14,6 +14,11 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     public class AnalogyXMLFactory : IAnalogyFactory
     {
         internal static Guid xmlFactoryId = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
+        public void RegisterNotificationCallback(INotificationReporter notificationReporter)
+        {
+            
+        }
+
         public Guid FactoryId { get; set; } = xmlFactoryId;
         public string Title { get; set; } = "XML Text Parser";
         public IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = LogViewer.XMLParser.ChangeLog.GetChangeLog();
