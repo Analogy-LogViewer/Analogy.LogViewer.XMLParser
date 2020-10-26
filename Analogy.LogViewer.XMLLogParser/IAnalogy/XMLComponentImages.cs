@@ -13,14 +13,14 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
     //{
     //    public Image GetLargeImage(Guid analogyComponentId)
     //    {
-    //        if (analogyComponentId == AnalogyXMLFactory.xmlFactoryId)
+    //        if (analogyComponentId == AnalogyXMLFactory.Id)
     //            return Resources.xml32x32;
     //        return null;
     //    }
 
     //    public Image GetSmallImage(Guid analogyComponentId)
     //    {
-    //        if (analogyComponentId == AnalogyXMLFactory.xmlFactoryId)
+    //        if (analogyComponentId == AnalogyXMLFactory.Id)
     //            return Resources.xml16x16;
     //        return null;
     //    }

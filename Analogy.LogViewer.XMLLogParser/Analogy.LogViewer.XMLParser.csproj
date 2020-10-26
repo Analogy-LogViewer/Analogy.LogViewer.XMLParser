@@ -18,13 +18,16 @@
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>0.3.4</Version>
+		<Version>0.3.5</Version>
 		<Company>Analogy.LogViewer</Company>
+		<Nullable>enable</Nullable>
+		<LangVersion>8.0</LangVersion>
 		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Analogy.CommonUtilities" Version="1.4.1" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.10" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 		<PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
 		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.7.9.5" />
