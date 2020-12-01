@@ -2,12 +2,14 @@
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLParser</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser</AssemblyName>
-		<TargetFrameworks>net472;net471;netcoreapp3.1</TargetFrameworks>
+		<TargetFrameworks>net48;net472;net471;netcoreapp3.1</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLParser</Product>
 		<Copyright>Lior Banai © 2020</Copyright>
@@ -18,7 +20,7 @@
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>0.3.6</Version>
+		<Version>0.3.7</Version>
 		<Company>Analogy.LogViewer</Company>
 		<Nullable>enable</Nullable>
 		<LangVersion>8.0</LangVersion>
@@ -26,11 +28,11 @@
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.CommonUtilities" Version="1.4.2" />
-		<PackageReference Include="Analogy.LogViewer.Template" Version="1.6.10.1" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="1.4.3" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="1.7.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 		<PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.8.1.1" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.8.2.5" />
 		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
