@@ -133,7 +133,9 @@ namespace Analogy.LogViewer.XMLParser
                         while (xr.Read())
                         {
                             while (xr.IsStartElement())
+                            {
                                 inner.Add((xr.Name, xr.ReadElementContentAsString()));
+                            }
                         }
                     }
 
