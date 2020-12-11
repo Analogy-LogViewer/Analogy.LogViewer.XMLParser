@@ -11,28 +11,24 @@ using Analogy.CommonUtilities.UI;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
-    public class AnalogyXMLFactory : IAnalogyFactory
+    public class AnalogyXMLFactory : Template.PrimaryFactory
     {
         internal static Guid Id = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
-        public void RegisterNotificationCallback(INotificationReporter notificationReporter)
-        {
-            
-        }
 
-        public Guid FactoryId { get; set; } = Id;
-        public string Title { get; set; } = "XML Text Parser";
-        public IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = LogViewer.XMLParser.ChangeLog.GetChangeLog();
-        public IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
-        public string About { get; set; } = "XML Text Parser";
-        public Image LargeImage { get; set; } = Resources.xml32x32;
-        public Image SmallImage { get; set; } = Resources.xml16x16;
+        public override Guid FactoryId { get; set; } = Id;
+        public override string Title { get; set; } = "XML Text Parser";
+        public override IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = LogViewer.XMLParser.ChangeLog.GetChangeLog();
+        public override IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
+        public override string About { get; set; } = "XML Text Parser";
+        public override Image? LargeImage { get; set; } = Resources.xml32x32;
+        public override Image? SmallImage { get; set; } = Resources.xml16x16;
     }
 
-    public class AnalogyXMLDataProviderFactory : IAnalogyDataProvidersFactory
+    public class AnalogyXMLDataProviderFactory : Template.DataProvidersFactory
     {
-        public Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
-        public string Title { get; set; } = "XML Data Provider";
-        public IEnumerable<IAnalogyDataProvider> DataProviders { get; } = new List<IAnalogyDataProvider>()
+        public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
+        public override string Title { get; set; } = "XML Data Provider";
+        public override IEnumerable<IAnalogyDataProvider> DataProviders { get; set; } = new List<IAnalogyDataProvider>()
         {
             new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings)
         };
@@ -45,17 +41,17 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public IEnumerable<IAnalogyCustomAction> Actions { get; } = new List<IAnalogyCustomAction>(0);
     }
 
-    public class AnalogyxmlSettings : IAnalogyDataProviderSettings
+    public class AnalogyxmlSettings : Template.UserSettingsFactory
     {
 
-        public Guid Id { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
-        public Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
-        public string Title { get; set; } = "XML Text Settings";
-        public UserControl DataProviderSettings { get; set; } = new CommonLogSettingsUC(UserSettingsManager.UserSettings.LogParserSettings);
-        public Image SmallImage { get; set; } = Resources.xml16x16;
-        public Image LargeImage { get; set; } = Resources.xml32x32;
+        public override Guid Id { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
+        public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
+        public override string Title { get; set; } = "XML Text Settings";
+        public override UserControl DataProviderSettings { get; set; } = new CommonLogSettingsUC(UserSettingsManager.UserSettings.LogParserSettings);
+        public override Image? SmallImage { get; set; } = Resources.xml16x16;
+        public override Image? LargeImage { get; set; } = Resources.xml32x32;
 
-        public Task SaveSettingsAsync()
+        public override Task SaveSettingsAsync()
         {
             UserSettingsManager.UserSettings.Save();
             return Task.CompletedTask;

@@ -1,56 +1,56 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.LogViewer.XMLParser.Managers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
-using Analogy.LogViewer.XMLParser.Managers;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
-    public class XMLDataProvider : IAnalogyOfflineDataProvider
+    public class XMLDataProvider : Template.OfflineDataProvider
     {
-        public string OptionalTitle { get; set; } = "Analogy XML Text Parser";
+        public override string OptionalTitle { get; set; } = "Analogy XML Text Parser";
 
-        public Guid Id { get; set; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
-        public Image LargeImage { get; set; } = null;
-        public Image SmallImage { get; set; } = null;
+        public override Guid Id { get; set; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
+        public override Image? LargeImage { get; set; } = null;
+        public override Image? SmallImage { get; set; } = null;
 
-        public bool CanSaveToLogFile { get; } = false;
-        public string FileOpenDialogFilters { get; } = "XML log files|*.xml";
-        public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] { "*.xml" };
-        public bool DisableFilePoolingOption { get; } = false;
-        public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
+        public override bool CanSaveToLogFile { get; set; } = false;
+        public override string FileOpenDialogFilters { get; set; } = "XML log files|*.xml";
+        public override string FileSaveDialogFilters { get; set; } = string.Empty;
+        public override IEnumerable<string> SupportFormats { get; set; } = new[] { "*.xml" };
+        public override bool DisableFilePoolingOption { get; set; } = false;
+        public override string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
         public XMLParser XMLParser { get; set; }
 
         private ILogParserSettings UserSettings { get; set; }
-        public bool UseCustomColors { get; set; } = false;
-        public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
+        public override bool UseCustomColors { get; set; } = false;
+        public override IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
-        public (Color backgroundColor, Color foregroundColor) GetColorForMessage(IAnalogyLogMessage logMessage)
+        public override (Color backgroundColor, Color foregroundColor) GetColorForMessage(IAnalogyLogMessage logMessage)
             => (Color.Empty, Color.Empty);
         public XMLDataProvider(ILogParserSettings userSettings)
         {
             UserSettings = userSettings;
         }
-        public Task InitializeDataProviderAsync(IAnalogyLogger logger)
+        public override Task InitializeDataProviderAsync(IAnalogyLogger logger)
         {
             LogManager.Instance.SetLogger(logger);
             XMLParser = new XMLParser(UserSettingsManager.UserSettings.LogParserSettings);
-            return Task.CompletedTask;
+            return base.InitializeDataProviderAsync(logger);
         }
 
-        public void MessageOpened(AnalogyLogMessage message)
+        public override void MessageOpened(AnalogyLogMessage message)
         {
             //nop
         }
-        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
+        public override async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
         {
             if (CanOpenFile(fileName))
             {
@@ -61,19 +61,16 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
 
         }
 
-        public IEnumerable<FileInfo> GetSupportedFiles(DirectoryInfo dirInfo, bool recursiveLoad)
-            => GetSupportedFilesInternal(dirInfo, recursiveLoad);
-
-        public Task SaveAsync(List<AnalogyLogMessage> messages, string fileName)
+        public override Task SaveAsync(List<AnalogyLogMessage> messages, string fileName)
         {
-            throw new NotSupportedException("Saving is not supported for Plain Text");
+            return Task.CompletedTask;
         }
 
-        public bool CanOpenFile(string fileName) => UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
+        public override bool CanOpenFile(string fileName) => UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
 
-        public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
+        public override bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
 
-        private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
+        protected override List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
 
             List<FileInfo> files = dirInfo.GetFiles("*.*")
