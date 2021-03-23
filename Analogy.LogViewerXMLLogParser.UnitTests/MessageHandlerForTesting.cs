@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Analogy.Interfaces;
 
 namespace Analogy.LogViewer.XMLFileProvider.UnitTests
 {
@@ -22,6 +19,11 @@ namespace Analogy.LogViewer.XMLFileProvider.UnitTests
         public void AppendMessages(List<AnalogyLogMessage> messages, string dataSource)
         {
             this.messages.AddRange(messages);
+        }
+
+        public void ReportFileReadProgress(AnalogyFileReadProgress progress)
+        {
+            //noop
         }
 
         public bool ForceNoFileCaching { get; set; }
