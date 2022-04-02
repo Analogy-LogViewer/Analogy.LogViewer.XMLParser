@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.XMLParser
 {
@@ -72,20 +73,22 @@ namespace Analogy.LogViewer.XMLParser
                 try
                 {
                     var rows = ParseData(xmlData);
-                    foreach (var items in rows)
+                    for (var i = 0; i < rows.Count; i++)
                     {
+                        var items = rows[i];
                         List<(string, string)> tuples = new List<(string, string)>(items.Count);
-                        foreach (var (key,value) in items)
+                        foreach (var (key, value) in items)
                         {
                             var keyProperty = _logFileSettings.GetAnalogyPropertyName(key);
                             tuples.Add(keyProperty.HasValue
                                 ? (keyProperty.Value.ToString(), value)
                                 : (key, value));
-
                         }
 
                         var m = AnalogyLogMessage.Parse(tuples);
                         messages.Add(m);
+                        messagesHandler.ReportFileReadProgress(
+                            new AnalogyFileReadProgress(AnalogyFileReadProgressType.Incremental, 1, i, rows.Count));
                     }
                 }
                 catch (Exception e)
