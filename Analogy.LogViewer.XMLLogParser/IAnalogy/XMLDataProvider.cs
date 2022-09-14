@@ -39,11 +39,11 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         {
             UserSettings = userSettings;
         }
-        public override Task InitializeDataProviderAsync(IAnalogyLogger logger)
+        public override Task InitializeDataProvider(IAnalogyLogger logger)
         {
             LogManager.Instance.SetLogger(logger);
             XMLParser = new XMLParser(UserSettingsManager.UserSettings.LogParserSettings);
-            return base.InitializeDataProviderAsync(logger);
+            return base.InitializeDataProvider(logger);
         }
 
         public override void MessageOpened(AnalogyLogMessage message)
