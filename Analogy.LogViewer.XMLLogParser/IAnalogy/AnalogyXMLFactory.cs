@@ -41,15 +41,20 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public IEnumerable<IAnalogyCustomAction> Actions { get; } = new List<IAnalogyCustomAction>(0);
     }
 
-    public class AnalogyxmlSettings : Template.UserSettingsFactory
+    public class AnalogyxmlSettings : Template.TemplateUserSettingsFactory
     {
 
         public override Guid Id { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
         public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
         public override string Title { get; set; } = "XML Text Settings";
-        public override UserControl DataProviderSettings { get; set; } = new CommonLogSettingsUC(UserSettingsManager.UserSettings.LogParserSettings);
+        public override UserControl DataProviderSettings { get; set; } 
         public override Image? SmallImage { get; set; } = Resources.xml16x16;
         public override Image? LargeImage { get; set; } = Resources.xml32x32;
+
+        public override void CreateUserControl(IAnalogyLogger logger)
+        {
+            DataProviderSettings = new CommonLogSettingsUC(UserSettingsManager.UserSettings.LogParserSettings);
+        }
 
         public override Task SaveSettingsAsync()
         {
