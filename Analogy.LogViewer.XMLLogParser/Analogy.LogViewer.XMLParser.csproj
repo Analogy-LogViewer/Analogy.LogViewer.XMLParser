@@ -20,7 +20,7 @@
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>3.6.0</Version>
+		<Version>3.8.0</Version>
 		<Company>Analogy.LogViewer</Company>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
@@ -28,9 +28,9 @@
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="3.6.0" />
-		<PackageReference Include="Analogy.CommonUtilities" Version="3.6.0" />
-		<PackageReference Include="Analogy.LogViewer.Template" Version="3.6.0" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="3.8.0" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="3.8.0" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="3.8.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.1.1">
@@ -42,10 +42,16 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	<ItemGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.1' and '$(TargetFramework)' != 'net5.0-windows' and '$(TargetFramework)' != 'net6.0-windows' and '$(TargetFramework)' != 'net7.0-windows'">
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' or '$(TargetFramework)' == 'net471' ">
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Windows.Forms" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' or '$(TargetFramework)' == 'net471' ">
+		<PackageReference Include="PolySharp" Version="1.12.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="Properties\Resources.Designer.cs">

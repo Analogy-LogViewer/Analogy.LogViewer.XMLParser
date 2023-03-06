@@ -24,7 +24,7 @@ namespace Analogy.LogViewer.XMLParser
             return fileName.Equals(file) ? fileName : $"{file} ({fileName})";
 
         }
-        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token,
+        public async Task<IEnumerable<IAnalogyLogMessage>> Process(string fileName, CancellationToken token,
             ILogMessageCreatedHandler messagesHandler)
         {
             if (string.IsNullOrEmpty(fileName))
@@ -49,7 +49,7 @@ namespace Analogy.LogViewer.XMLParser
                     Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName
                 };
                 messagesHandler.AppendMessage(empty, GetFileNameAsDataSource(fileName));
-                return new List<AnalogyLogMessage> { empty };
+                return new List<IAnalogyLogMessage> { empty };
             }
 
             if (!_logFileSettings.CanOpenFile(fileName))
@@ -65,7 +65,7 @@ namespace Analogy.LogViewer.XMLParser
                 return new List<AnalogyLogMessage> { empty };
             }
 
-            List<AnalogyLogMessage> messages = new List<AnalogyLogMessage>();
+            List<IAnalogyLogMessage> messages = new List<IAnalogyLogMessage>();
             try
             {
                 string xmlData = File.ReadAllText(fileName);
