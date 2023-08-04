@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Analogy.LogViewer.Template.Managers;
+using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
@@ -16,21 +17,21 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override string OptionalTitle { get; set; } = "Analogy XML Text Parser";
 
         public override Guid Id { get; set; } = new Guid("1DA46386-5604-449E-87FB-7D1036A85978");
-        public override Image? LargeImage { get; set; } = null;
-        public override Image? SmallImage { get; set; } = null;
+        public override Image? LargeImage { get; set; }
+        public override Image? SmallImage { get; set; }
 
-        public override bool CanSaveToLogFile { get; set; } = false;
+        public override bool CanSaveToLogFile { get; set; }
         public override string FileOpenDialogFilters { get; set; } = "XML log files|*.xml";
         public override string FileSaveDialogFilters { get; set; } = string.Empty;
         public override IEnumerable<string> SupportFormats { get; set; } = new[] { "*.xml" };
-        public override bool DisableFilePoolingOption { get; set; } = false;
+        public override bool DisableFilePoolingOption { get; set; }
         public override string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
         public XMLParser XMLParser { get; set; }
 
         private ILogParserSettings UserSettings { get; set; }
-        public override bool UseCustomColors { get; set; } = false;
+        public override bool UseCustomColors { get; set; }
         public override IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
@@ -40,7 +41,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         {
             UserSettings = userSettings;
         }
-        public override Task InitializeDataProvider(IAnalogyLogger logger)
+        public override Task InitializeDataProvider(ILogger logger)
         {
             LogManager.Instance.SetLogger(logger);
             XMLParser = new XMLParser(UserSettingsManager.UserSettings.LogParserSettings);

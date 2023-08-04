@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.CommonUtilities.UI;
+using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
@@ -43,7 +44,6 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
 
     public class AnalogyxmlSettings : Template.TemplateUserSettingsFactory
     {
-
         public override Guid Id { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
         public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
         public override string Title { get; set; } = "XML Text Settings";
@@ -51,7 +51,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override Image? SmallImage { get; set; } = Resources.xml16x16;
         public override Image? LargeImage { get; set; } = Resources.xml32x32;
 
-        public override void CreateUserControl(IAnalogyLogger logger)
+        public override void CreateUserControl(ILogger logger)
         {
             DataProviderSettings = new CommonLogSettingsUC(UserSettingsManager.UserSettings.LogParserSettings);
         }

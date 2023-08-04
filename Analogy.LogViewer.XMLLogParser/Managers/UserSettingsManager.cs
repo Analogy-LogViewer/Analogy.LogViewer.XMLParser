@@ -4,6 +4,7 @@ using System.IO;
 using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace Analogy.LogViewer.XMLParser.Managers
@@ -28,7 +29,7 @@ namespace Analogy.LogViewer.XMLParser.Managers
                 }
                 catch (Exception ex)
                 {
-                    LogManager.Instance.LogException("Error loading user setting file",ex, "XML Provider");
+                    LogManager.Instance.LogError(ex, "Error loading user setting file", ex, "XML Provider");
                     LogParserSettings = new LogParserSettings();
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.xml" };
                 }
@@ -50,7 +51,7 @@ namespace Analogy.LogViewer.XMLParser.Managers
             }
             catch (Exception e)
             {
-                LogManager.Instance.LogException("Error saving XML parser settings",e, "XML parser");
+                LogManager.Instance.LogError(e, "Error saving XML parser settings", e, "XML parser");
             }
 
 
