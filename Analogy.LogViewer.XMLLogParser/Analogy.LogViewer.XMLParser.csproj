@@ -15,7 +15,7 @@
 		<Copyright>Lior Banai © 2020-2023</Copyright>
 		<PackageId>Analogy.LogViewer.XMLParser</PackageId>
 		<Authors>Lior Banai</Authors>
-		<VersionPrefix>5.0.1.0</VersionPrefix>
+		<VersionPrefix>5.0.3.0</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</PackageProjectUrl>
@@ -29,9 +29,9 @@
 		<PackageIcon>Analogy_XMLParser.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="5.0.0" />
-		<PackageReference Include="Analogy.CommonUtilities" Version="5.0.0" />
-		<PackageReference Include="Analogy.LogViewer.Template" Version="5.0.2" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="5.0.3" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="5.0.3" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="5.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="PolySharp" Version="1.13.2">
 		  <PrivateAssets>all</PrivateAssets>
