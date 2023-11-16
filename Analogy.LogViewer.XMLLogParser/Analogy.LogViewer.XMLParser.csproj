@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLParser</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser</AssemblyName>
@@ -30,7 +30,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="5.0.3" />
-		<PackageReference Include="Analogy.CommonUtilities" Version="5.0.3" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="6.0.0" />
 		<PackageReference Include="Analogy.LogViewer.Template" Version="5.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="PolySharp" Version="1.13.2">
