@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,15 +8,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.XMLParser
 {
-    public class XMLParser
+    public class Parser
     {
         private ILogParserSettings _logFileSettings;
-        public XMLParser(ILogParserSettings logFileSettings)
+        public Parser(ILogParserSettings logFileSettings)
         {
             _logFileSettings = logFileSettings;
         }
@@ -22,7 +22,6 @@ namespace Analogy.LogViewer.XMLParser
         {
             string file = Path.GetFileName(fileName);
             return fileName.Equals(file) ? fileName : $"{file} ({fileName})";
-
         }
         public async Task<IEnumerable<IAnalogyLogMessage>> Process(string fileName, CancellationToken token,
             ILogMessageCreatedHandler messagesHandler)
@@ -33,7 +32,7 @@ namespace Analogy.LogViewer.XMLParser
                     AnalogyLogLevel.Critical, AnalogyLogClass.General, "Analogy", "None")
                 {
                     Source = "Analogy",
-                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName
+                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName,
                 };
                 messagesHandler.AppendMessage(empty, GetFileNameAsDataSource(fileName));
                 return new List<AnalogyLogMessage> { empty };
@@ -46,7 +45,7 @@ namespace Analogy.LogViewer.XMLParser
                     AnalogyLogLevel.Critical, AnalogyLogClass.General, "Analogy", "None")
                 {
                     Source = "Analogy",
-                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName
+                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName,
                 };
                 messagesHandler.AppendMessage(empty, GetFileNameAsDataSource(fileName));
                 return new List<IAnalogyLogMessage> { empty };
@@ -59,7 +58,7 @@ namespace Analogy.LogViewer.XMLParser
                     AnalogyLogLevel.Critical, AnalogyLogClass.General, "Analogy", "None")
                 {
                     Source = "Analogy",
-                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName
+                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName,
                 };
                 messagesHandler.AppendMessage(empty, GetFileNameAsDataSource(fileName));
                 return new List<AnalogyLogMessage> { empty };
@@ -106,14 +105,12 @@ namespace Analogy.LogViewer.XMLParser
                     AnalogyLogLevel.Critical, AnalogyLogClass.General, "Analogy", "None")
                 {
                     Source = "Analogy",
-                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName
+                    Module = System.Diagnostics.Process.GetCurrentProcess().ProcessName,
                 };
                 messagesHandler.AppendMessage(empty, GetFileNameAsDataSource(fileName));
-                return new List<AnalogyLogMessage> { empty
-    };
+                return new List<AnalogyLogMessage> { empty };
             }
         }
-
 
         private string TryFix(string data)
         {
@@ -143,7 +140,6 @@ namespace Analogy.LogViewer.XMLParser
                     }
 
                     items.Add(inner);
-
                 });
             return items;
         }

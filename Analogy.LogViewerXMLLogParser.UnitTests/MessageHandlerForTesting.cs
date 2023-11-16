@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Analogy.LogViewer.XMLFileProvider.UnitTests
 {
-    class MessageHandlerForTesting : ILogMessageCreatedHandler
+    public class MessageHandlerForTesting : ILogMessageCreatedHandler
     {
         private List<IAnalogyLogMessage> messages;
         public MessageHandlerForTesting()

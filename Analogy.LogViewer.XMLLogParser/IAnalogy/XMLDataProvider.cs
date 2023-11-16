@@ -1,5 +1,7 @@
 ﻿using Analogy.Interfaces;
+using Analogy.LogViewer.Template.Managers;
 using Analogy.LogViewer.XMLParser.Managers;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,8 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.LogViewer.Template.Managers;
-using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
@@ -28,14 +28,14 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
-        public XMLParser XMLParser { get; set; }
+        public Parser Parser { get; set; }
 
         private ILogParserSettings UserSettings { get; set; }
         public override bool UseCustomColors { get; set; }
-        public override IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
+        public override IEnumerable<(string OriginalHeader, string ReplacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
-        public override (Color backgroundColor, Color foregroundColor) GetColorForMessage(IAnalogyLogMessage logMessage)
+        public override (Color BackgroundColor, Color ForegroundColor) GetColorForMessage(IAnalogyLogMessage logMessage)
             => (Color.Empty, Color.Empty);
         public XMLDataProvider(ILogParserSettings userSettings)
         {
@@ -44,7 +44,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override Task InitializeDataProvider(ILogger logger)
         {
             LogManager.Instance.SetLogger(logger);
-            XMLParser = new XMLParser(UserSettingsManager.UserSettings.LogParserSettings);
+            Parser = new Parser(UserSettingsManager.UserSettings.LogParserSettings);
             return base.InitializeDataProvider(logger);
         }
 
@@ -56,11 +56,10 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         {
             if (CanOpenFile(fileName))
             {
-                return await XMLParser.Process(fileName, token, messagesHandler);
+                return await Parser.Process(fileName, token, messagesHandler);
             }
 
             return new List<AnalogyLogMessage>(0);
-
         }
 
         public override Task SaveAsync(List<IAnalogyLogMessage> messages, string fileName)
@@ -74,7 +73,6 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
 
         protected override List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
-
             List<FileInfo> files = dirInfo.GetFiles("*.*")
                 .Where(f => UserSettings.CanOpenFile(f.FullName)).ToList();
             if (!recursive)

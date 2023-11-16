@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Analogy.Interfaces;
+﻿using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Analogy.LogViewer.XMLParser.Managers
 {
@@ -16,7 +16,6 @@ namespace Analogy.LogViewer.XMLParser.Managers
         public static UserSettingsManager UserSettings { get; set; } = _instance.Value;
         private string NLogFileSetting { get; } = "AnalogyXMLTextSettings.json";
         public ILogParserSettings LogParserSettings { get; set; }
-
 
         public UserSettingsManager()
         {
@@ -38,9 +37,7 @@ namespace Analogy.LogViewer.XMLParser.Managers
             {
                 LogParserSettings = new LogParserSettings();
                 LogParserSettings.SupportedFilesExtensions = new List<string> { "*.xml" };
-
             }
-
         }
 
         public void Save()
@@ -53,8 +50,6 @@ namespace Analogy.LogViewer.XMLParser.Managers
             {
                 LogManager.Instance.LogError(e, "Error saving XML parser settings", e, "XML parser");
             }
-
-
         }
     }
 }

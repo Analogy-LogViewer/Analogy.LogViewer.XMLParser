@@ -1,14 +1,14 @@
-﻿using Analogy.Interfaces;
+﻿using Analogy.CommonUtilities.UI;
+using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.LogViewer.XMLParser.Managers;
 using Analogy.LogViewer.XMLParser.Properties;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Analogy.CommonUtilities.UI;
-using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
@@ -31,7 +31,7 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override string Title { get; set; } = "XML Data Provider";
         public override IEnumerable<IAnalogyDataProvider> DataProviders { get; set; } = new List<IAnalogyDataProvider>()
         {
-            new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings)
+            new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings),
         };
     }
 
@@ -61,6 +61,5 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
             UserSettingsManager.UserSettings.Save();
             return Task.CompletedTask;
         }
-
     }
 }

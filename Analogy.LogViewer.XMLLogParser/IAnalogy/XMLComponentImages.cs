@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.LogViewer.XMLParser.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
-using Analogy.LogViewer.XMLParser.Properties;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {

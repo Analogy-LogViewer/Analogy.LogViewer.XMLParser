@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Analogy.LogViewer.XMLFileProvider.UnitTests
 {
@@ -17,9 +17,9 @@ namespace Analogy.LogViewer.XMLFileProvider.UnitTests
             string fileName = "defaultFile_2019_05_19_13_42_33.xml";
             ILogParserSettings lp = new LogParserSettings();
             lp.IsConfigured = true;
-            lp.AddMap(AnalogyLogMessagePropertyName.Id,"ID");
+            lp.AddMap(AnalogyLogMessagePropertyName.Id, "ID");
             lp.SupportedFilesExtensions = new List<string>() { "*.xml" };
-            var fp = new XMLParser.XMLParser(lp);
+            var fp = new XMLParser.Parser(lp);
             CancellationTokenSource ts = new CancellationTokenSource();
             MessageHandlerForTesting handler = new MessageHandlerForTesting();
             await fp.Process(fileName, ts.Token, handler);
