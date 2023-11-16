@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLParser</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser</AssemblyName>
@@ -38,7 +38,7 @@
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.1.1">
+		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="8.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
