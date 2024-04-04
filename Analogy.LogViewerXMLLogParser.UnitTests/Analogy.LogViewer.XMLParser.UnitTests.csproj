@@ -23,11 +23,11 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.2.2" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.3.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="MSTest.TestAdapter" Version="3.2.2" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.3.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
