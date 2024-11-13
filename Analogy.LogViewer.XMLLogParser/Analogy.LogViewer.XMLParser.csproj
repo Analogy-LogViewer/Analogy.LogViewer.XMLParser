@@ -2,13 +2,13 @@
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLParser</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser</AssemblyName>
-		<TargetFrameworks>net8.0-windows;net6.0-windows;net48</TargetFrameworks>
+		<TargetFrameworks>net9.0-windows;net8.0-windows;net48</TargetFrameworks>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLParser</Product>
 		<Copyright>Lior Banai 2020-2025</Copyright>
 		<PackageId>Analogy.LogViewer.XMLParser</PackageId>
 		<Authors>Lior Banai</Authors>
-		<VersionPrefix>7.1.0</VersionPrefix>
+		<VersionPrefix>7.1.1</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
 		<PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.XMLParser</RepositoryUrl>
