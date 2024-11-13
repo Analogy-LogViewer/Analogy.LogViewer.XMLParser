@@ -2,12 +2,12 @@
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLFileProvider.UnitTests</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser.UnitTests</AssemblyName>
-		<TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+		<TargetFrameworks>net48;net9.0-windows</TargetFrameworks>
 		<IsCodedUITest>False</IsCodedUITest>
 		<TestProjectType>UnitTest</TestProjectType>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider.UnitTests</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLFileProvider.UnitTests</Product>
-		<Copyright>Copyright © 2019-2024</Copyright>
+		<Copyright>Copyright 2019-2025</Copyright>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -18,13 +18,13 @@
 	</PropertyGroup>
 	<Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.2.2" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest.TestAdapter" Version="3.5.2" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.5.2" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.6.3" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.6.3" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
