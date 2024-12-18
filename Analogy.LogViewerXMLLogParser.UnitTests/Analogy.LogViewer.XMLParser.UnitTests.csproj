@@ -18,13 +18,13 @@
 	</PropertyGroup>
 	<Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.2.2" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest.TestAdapter" Version="3.6.3" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.6.3" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
