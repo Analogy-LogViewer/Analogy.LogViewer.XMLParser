@@ -23,8 +23,8 @@
 		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.7.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.7.2" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
