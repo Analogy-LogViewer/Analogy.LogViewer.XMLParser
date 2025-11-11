@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
-    public class XMLDataProvider : Template.OfflineDataProvider
+    public class XMLDataProvider : Template.OfflineDataProviderWinForms
     {
         public override string OptionalTitle { get; set; } = "Analogy XML Text Parser";
 

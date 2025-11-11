@@ -7,7 +7,7 @@
 		<TestProjectType>UnitTest</TestProjectType>
 		<AssemblyTitle>Analogy.LogViewer.XMLFileProvider.UnitTests</AssemblyTitle>
 		<Product>Analogy.LogViewer.XMLFileProvider.UnitTests</Product>
-		<Copyright>Copyright 2019-2025</Copyright>
+		<Copyright>Copyright 2019-2026</Copyright>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
