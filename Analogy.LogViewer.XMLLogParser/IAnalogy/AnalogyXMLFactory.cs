@@ -3,6 +3,7 @@ using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
 using Analogy.Interfaces.WinForms;
 using Analogy.Interfaces.WinForms.Factories;
+using Analogy.LogViewer.Template.WinForms;
 using Analogy.LogViewer.XMLParser.Managers;
 using Analogy.LogViewer.XMLParser.Properties;
 using Microsoft.Extensions.Logging;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
-    public class AnalogyXMLFactory : Template.PrimaryFactoryWinForms
+    public class AnalogyXMLFactory : PrimaryFactoryWinForms
     {
         internal static Guid Id = new Guid("9652600E-1B14-4812-BCEC-9A6194DB9AEA");
 
@@ -27,26 +28,24 @@ namespace Analogy.LogViewer.XMLParser.IAnalogy
         public override Image? SmallImage { get; set; } = Resources.xml16x16;
     }
 
-    public class AnalogyXMLDataProviderFactory : Template.DataProvidersFactoryWinForms
+    public class AnalogyXMLDataProviderFactory : DataProvidersFactoryWinForms
     {
         public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
         public override string Title { get; set; } = "XML Data Provider";
-        public override IEnumerable<IAnalogyDataProviderWinForms> DataProviders { get; set; } = new List<IAnalogyDataProviderWinForms>()
+        public override IEnumerable<IAnalogyDataProvider> DataProviders { get; set; } = new List<IAnalogyDataProvider>()
         {
             new XMLDataProvider(UserSettingsManager.UserSettings.LogParserSettings),
         };
     }
 
-    public class AnalogyXMLCustomActionFactory : IAnalogyCustomActionsFactoryWinForms
+    public class AnalogyXMLCustomActionFactory : CustomActionsFactoryWinForms
     {
-        public Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
-        public string Title { get; set; } = "XML Text tools";
-        IEnumerable<IAnalogyCustomAction> IAnalogyCustomActionsFactory.Actions => Actions;
-
+        public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;
+        public override string Title { get; set; } = "XML Text tools";
         public IEnumerable<IAnalogyCustomActionWinForms> Actions { get; } = new List<IAnalogyCustomActionWinForms>(0);
     }
 
-    public class AnalogyxmlSettings : Template.TemplateUserSettingsFactoryWinForms
+    public class AnalogyxmlSettings : TemplateUserSettingsFactoryWinForms
     {
         public override Guid Id { get; set; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
         public override Guid FactoryId { get; set; } = AnalogyXMLFactory.Id;

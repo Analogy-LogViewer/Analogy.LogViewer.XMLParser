@@ -1,6 +1,7 @@
 ﻿using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
+using Analogy.LogViewer.Template.WinForms;
 using Analogy.LogViewer.XMLParser.Managers;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Analogy.LogViewer.XMLParser.IAnalogy
 {
-    public class XMLDataProvider : Template.OfflineDataProviderWinForms
+    public class XMLDataProvider : OfflineDataProviderWinForms
     {
         public override string OptionalTitle { get; set; } = "Analogy XML Text Parser";
 

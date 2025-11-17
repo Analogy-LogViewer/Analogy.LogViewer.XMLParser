@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>Analogy.LogViewer.XMLFileProvider.UnitTests</RootNamespace>
 		<AssemblyName>Analogy.LogViewer.XMLParser.UnitTests</AssemblyName>
@@ -18,13 +18,13 @@
 	</PropertyGroup>
 	<Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.2.2" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest.TestAdapter" Version="3.8.3" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
+		<PackageReference Include="MSTest.TestAdapter" Version="4.0.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="4.0.2" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Analogy.LogViewer.XMLLogParser\Analogy.LogViewer.XMLParser.csproj" />
